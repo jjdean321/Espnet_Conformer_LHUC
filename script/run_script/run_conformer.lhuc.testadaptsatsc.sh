@@ -56,29 +56,13 @@ set -u #-u 'undefined variable'
 set -o pipefail 'error in pipeline'
 
 train_set=eval2000
-train_dev=eval2000_dev
+# train_dev=eval2000_dev
 #train_set=eval2000
 #train_dev=eval2000
 recog_set="eval2000"
 
-#feat_tr_dir=${dumpdir}/${train_set}/delta${do_delta}
-#feat_dt_dir=${dumpdir}/${train_dev}/delta${do_delta}
-#feat_tr_dir=exp/train_nodup_trim_pytorch_transformer_baseline_lhuc_100ep/decode_eval2000_model.acc.best_decode/hyp.wrd.trn_dumplhuc_correctsome
-#feat_dt_dir=exp/train_nodup_trim_pytorch_transformer_baseline_lhuc_100ep/decode_eval2000_model.acc.best_decode/hyp.wrd.trn_dumplhuc_dev
-#feat_dt_dir=dump_lhuc/eval2000_dev/deltafalse
-#feat_tr_dir=exp/train_nodup_trim_pytorch_transformer_baseline_lhuc_100ep/decode_eval2000_model.acc.best_decode_nbest20/hyp.wrd.trn_dumplhuc_nbest3
-#feat_tr_dir=exp/train_nodup_trim_pytorch_transformer_baseline_lhuc_100ep/decode_eval2000_model.acc.best_decode/hyp.wrd.trn_dumplhuc
-#feat_tr_dir=dump_lhuc/eval2000/deltafalse
-
-# feat_tr_dir=exp/train_nodup_trim_pytorch_transformer_baseline_lhuc_100ep/decode_eval2000_model.acc.best_decode_lm_bpe2000_transformer_selftrain/hyp.wrd.trn_dumplhuc
-# feat_tr_dir=exp/train_nodup_trim_pytorch_transformer_baseline_lhuc_100ep/decode_eval2000_model.last10.avg.best_decode_lm_bpe2000_transformer_selftrain/hyp.wrd.trn_dumplhuc
-# feat_tr_dir=exp/train_nodup_trim_pytorch_transformer_baseline_lhuc_100ep/decode_eval2000_model.acc.best_decode_lm_bpe2000_transformer_selftrain/scoring/hyp.ctm.filt.pra_dumplhuc
-# feat_tr_dir=exp/1020/train_nodup_trim_sat_conv2d2_sigmoid_sgd_train_transformer_lhuc.sat_specaug/decode_eval2000_model.acc.best_decode.sat/hyp.wrd.trn_dumplhuc
-# feat_tr_dir=exp/1020/train_nodup_trim_sat_scratch_conv2d2_sigmoid_train_transformer_lhuc.satfromscratch_specaug/decode_eval2000_model.acc.best_decode.sat/hyp.wrd.trn_dumplhuc
-# feat_tr_dir=exp/train_nodup_trim_pytorch_transformer_baseline_lhuc_100ep/decode_eval2000_model.acc.best_decode/hyp.wrd.trn_dumplhuc
-# feat_tr_dir=exp/train_nodup_trim_pytorch_transformer_baseline_lhuc_100ep/decode_eval2000_model.last10.avg.best_decode_/hyp.wrd.trn_dumplhuc
 feat_tr_dir=exp/1024_conformer/train_nodup_trim_conformer_bs64_baseline_train_pytorch_conformer_lr5_specaug/decode_eval2000_model.last10.avg.best_decode_nolm/hyp.wrd.trn_dumplhuc
-feat_dt_dir=dump_lhuc/eval2000/deltafalse
+feat_dt_dir=dump_lhuc/train_dev/deltafalse
 
 dict=data/lang_char/train_nodup_${bpemode}${nbpe}_units.txt
 bpemodel=data/lang_char/train_nodup_${bpemode}${nbpe}
