@@ -1,0 +1,23 @@
+# This script is used to illustrate the LHUC of E2E system, dean
+
+1) Data set 
+1.1) Add spkid in the features ("dump" -> "dump_lhuc")
+./scripts/data_lhuc_prepare.sh 
+83dim -> 84-dim spkid
+
+2) Baseline Conformer system
+script: ./run_script/run_conformer.lhuc.sat.sh
+conf: ./conf/train_conformer_lhuc.baseline.yaml
+
+3) LHUC-SAT system
+script: ./run_script/run_script/run_conformer.lhuc.sat.sh
+conf: ./conf/train_conformer_lhuc.sat.yaml
+
+4) Test-adapt 
+4.1) First generate the "align" with the decoder output of the baseline model 
+script: ./scripts/lhuc_generate_text.sh
+
+4.2) Train
+script: ./run_script/run_conformer.lhuc.testadapt.sh
+conf: ./conf/train_conformer_lhuc.testadapt.yaml
+
